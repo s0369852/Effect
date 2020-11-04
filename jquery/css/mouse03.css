@@ -110,6 +110,7 @@ body::before {
     background-color: #fff;
     user-select: none;
     pointer-events: none;
+    mix-blend-mode: difference;
     transform: scale(1);
     transition: transform 0.3s ease-in-out;
     -webkit-transition: transform 0.3s ease-in-out;
