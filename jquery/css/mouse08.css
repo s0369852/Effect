@@ -1,0 +1,255 @@
+@charset "UTF-8";
+
+/* reset */
+
+@font-face { 
+    font-family: 'GongGothicMedium'; 
+    src: url('https://github.com/projectnoonnu/noonfonts_20-10/blob/main/GongGothicMedium.woff') format('woff'); 
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+}
+
+a:hover {
+    border-bottom: 1px dashed #fff;
+}
+
+img {
+    width: 100%;
+    vertical-align: top;
+}
+
+ul {
+    padding: 10px 20px;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    overflow: hidden;
+    height: 100vh;
+    font-size: 16px;
+    line-height: 1.5;
+    background: url(/img/03.JPG) no-repeat center center;
+    background-size: cover;
+    color: #ffffff;
+    font-family: 'GongGothicMedium'; 
+    /* cursor: none; */
+    transition:  all 0.2s;
+    -webkit-transition:  all 0.2s;
+    -moz-transition:  all 0.2s;
+    -ms-transition:  all 0.2s;
+    -o-transition:  all 0.2s;
+}
+
+body::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(5, 46, 70, 0.7);
+}
+
+/* main */
+/* 실제 포트폴리오 작업에서는 position: absolute를 사용하는 것은 비추. 왜냐면 영역이 없기 때문에 반응형할때 힘들다. 
+그래서 웬만해서는 position을 사용하지 않고 현재 살아있는 값을 이용해 주는 것이 좋다. */
+.textWrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    -webkit-transform: translate(-50%, -20%);
+    -moz-transform: translate(-50%, -20%);
+    -ms-transform: translate(-50%, -20%);
+    -o-transform: translate(-50%, -20%);
+}
+
+.textWrap .line {
+    display: flex;
+    /* 100vw를 사용해도 좋지만 전체를 작업할때는 vw가 약간의 여백이 생기기 때문에 %를 이용. */
+    width: 100%;
+}
+
+.textWrap .line .left {
+    overflow: hidden;
+    width: 50vw;
+    /*영역을 잡을 때는 항상 가상으로 주고 색을 넣어 확인해 보는 것이 좋다.*/
+    /* height: 500px;
+    background-color: #f0808f; */
+    color: gold;
+    transform: skew(0deg, -15deg);
+    -webkit-transform: skew(0deg, -15deg);
+    -moz-transform: skew(0deg, -15deg);
+    -ms-transform: skew(0deg, -15deg);
+    -o-transform: skew(0deg, -15deg);
+}
+
+.textWrap .line .left .spanWrap {
+    width: 100vw;
+    text-align: center;
+}
+
+.textWrap .line .right {
+    overflow: hidden;
+    width: 50vw;
+    /* height: 500px;
+    background-color: #ff0354; */
+    transform: skew(0deg, 15deg);
+    -webkit-transform: skew(0deg, 15deg);
+    -moz-transform: skew(0deg, 15deg);
+    -ms-transform: skew(0deg, 15deg);
+    -o-transform: skew(0deg, 15deg);
+}
+
+.textWrap .line .right .spanWrap {
+    width: 100vw;
+    text-align: center;
+    transform: translateX(-50vw);
+    -webkit-transform: translateX(-50vw);
+    -moz-transform: translateX(-50vw);
+    -ms-transform: translateX(-50vw);
+    -o-transform: translateX(-50vw);
+}
+
+.textWrap span {
+    display: inline-block;
+    font-size: 3vw;
+    font-weight: bold;
+}
+
+.imgWrap {
+    /* 이미지가 안 거슬리게 해주기 위해서 z-index: -1;을 넣어줬다.  */
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+
+/* info */
+.info {
+    position: absolute;
+    z-index: 1000;
+}
+
+.info h1 {
+    font-size: 20px;
+    border-bottom: 1px dashed #fff;
+    margin-bottom: 8px;
+}
+
+.info p, .info li {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 3px;
+}
+
+.info li.active a:first-child {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.info.left {
+    top: 20px;
+    left: 20px;
+}
+
+.info.right {
+    top: 10px;
+    right: 10px;
+}
+
+.info.right a {
+    display: inline-block;
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 12px;
+    border: 1px dashed #fff;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+}
+
+.info.right a:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.info.bottom {
+    left: 10px;
+    bottom: 10px;
+}
+
+.info.bottom li {
+    display: block;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+}
+
+.info.bottom li.active {
+    color: orange;
+}
+
+.info.bottom li:hover {
+    color: orange;
+}
+
+.info.view {
+    right: 20px;
+    bottom: 20px;
+}
+
+.info.view a {
+    padding: 5px 30px;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+
+@media (max-width: 800px) {
+    .info.bottom {display: none;}
+    .info.right {display: none;}
+}
+
