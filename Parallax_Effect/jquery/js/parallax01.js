@@ -16,7 +16,6 @@
     
     scrollTop값하고 각 section의 offset값을 비교하는 것.
     두 값을 비교해서 값이 같으면 section의 컨텐츠가 나오도록 만든다. 
-
 */
 
 // window(브라우저)가 스크롤이 되면 무언가를 작동시켜라.
